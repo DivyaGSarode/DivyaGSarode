@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator - Scientific</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/core-calculator.js" defer></script>
+    <script src="../js/scientific-calculations.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Scientific Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="scientific.html">Scientific</a></li>
+                <li><a href="finance.html">Finance</a></li>
+                <li><a href="statistics.html">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Perform Scientific Calculations</h2>
+            <form id="scientific-calculator">
+                <input type="text" id="input" placeholder="Enter value" required>
+                <div>
+                    <button type="button" onclick="calculateSin()">Sin</button>
+                    <button type="button" onclick="calculateCos()">Cos</button>
+                    <button type="button" onclick="calculateTan()">Tan</button>
+                    <button type="button" onclick="calculateLog()">Log</button>
+                    <button type="button" onclick="calculateExp()">Exp</button>
+                    <button type="button" onclick="calculateSqrt()">Sqrt</button>
+                </div>
+                <div>
+                    <h3>Result: <span id="result"></span></h3>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Advanced Calculator App</p>
+    </footer>
+</body>
+</html>

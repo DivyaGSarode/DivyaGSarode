@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Calculator</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/core-calculator.js" defer></script>
+    <script src="../js/statistics-calculations.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Statistics Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="scientific.html">Scientific</a></li>
+                <li><a href="finance.html">Finance</a></li>
+                <li><a href="statistics.html">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Input Data</h2>
+            <textarea id="dataInput" placeholder="Enter your data separated by commas"></textarea>
+            <button id="calculateBtn">Calculate Statistics</button>
+        </section>
+        <section id="results">
+            <h2>Results</h2>
+            <p id="meanResult"></p>
+            <p id="medianResult"></p>
+            <p id="modeResult"></p>
+            <p id="stdDevResult"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Advanced Calculator App</p>
+    </footer>
+    <script>
+        document.getElementById('calculateBtn').addEventListener('click', function() {
+            const data = document.getElementById('dataInput').value.split(',').map(Number);
+            document.getElementById('meanResult').textContent = 'Mean: ' + calculateMean(data);
+            document.getElementById('medianResult').textContent = 'Median: ' + calculateMedian(data);
+            document.getElementById('modeResult').textContent = 'Mode: ' + calculateMode(data);
+            document.getElementById('stdDevResult').textContent = 'Standard Deviation: ' + calculateStandardDeviation(data);
+        });
+    </script>
+</body>
+</html>

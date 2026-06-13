@@ -1,5 +1,9 @@
 using System;
 
+/// <summary>
+/// Console application that reads two integers from command-line arguments
+/// and prints their Greatest Common Divisor (GCD) using the Euclidean algorithm.
+/// </summary>
 class Program
 {
     /// <summary>

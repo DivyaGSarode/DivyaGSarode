@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Calculator</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/core-calculator.js" defer></script>
+    <script src="../js/finance-calculations.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Finance Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="scientific.html">Scientific</a></li>
+                <li><a href="finance.html">Finance</a></li>
+                <li><a href="statistics.html">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Calculate Loan Payments</h2>
+            <label for="loan-amount">Loan Amount:</label>
+            <input type="number" id="loan-amount" placeholder="Enter loan amount">
+            <label for="interest-rate">Interest Rate (%):</label>
+            <input type="number" id="interest-rate" placeholder="Enter interest rate">
+            <label for="loan-term">Loan Term (years):</label>
+            <input type="number" id="loan-term" placeholder="Enter loan term">
+            <button id="calculate-payment">Calculate Payment</button>
+            <p id="payment-result"></p>
+        </section>
+        <section>
+            <h2>Calculate Compound Interest</h2>
+            <label for="principal">Principal Amount:</label>
+            <input type="number" id="principal" placeholder="Enter principal amount">
+            <label for="rate">Annual Interest Rate (%):</label>
+            <input type="number" id="rate" placeholder="Enter annual interest rate">
+            <label for="time">Time (years):</label>
+            <input type="number" id="time" placeholder="Enter time in years">
+            <button id="calculate-interest">Calculate Interest</button>
+            <p id="interest-result"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Advanced Calculator App</p>
+    </footer>
+    <script>
+        document.getElementById('calculate-payment').addEventListener('click', function() {
+            const loanAmount = parseFloat(document.getElementById('loan-amount').value);
+            const interestRate = parseFloat(document.getElementById('interest-rate').value) / 100 / 12;
+            const loanTerm = parseFloat(document.getElementById('loan-term').value) * 12;
+
+            const monthlyPayment = (loanAmount * interestRate) / (1 - Math.pow(1 + interestRate, -loanTerm));
+            document.getElementById('payment-result').textContent = `Monthly Payment: $${monthlyPayment.toFixed(2)}`;
+        });
+
+        document.getElementById('calculate-interest').addEventListener('click', function() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value) / 100;
+            const time = parseFloat(document.getElementById('time').value);
+
+            const compoundInterest = principal * Math.pow((1 + rate), time) - principal;
+            document.getElementById('interest-result').textContent = `Compound Interest: $${compoundInterest.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>
