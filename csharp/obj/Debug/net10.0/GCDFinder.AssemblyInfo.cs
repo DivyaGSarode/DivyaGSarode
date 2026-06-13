@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GCDFinder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc997db341f95aa98b6db5707b621bb18a371ee9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9d2aca2f5cedd4df952964a6ccac57486a75f56")]
 [assembly: System.Reflection.AssemblyProductAttribute("GCDFinder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GCDFinder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
