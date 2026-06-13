@@ -1,0 +1,15 @@
+/workspaces/DivyaGSarode/csharp/obj/Debug/net8.0/GCDFinder.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/DivyaGSarode/csharp/obj/Debug/net8.0/GCDFinder.AssemblyInfoInputs.cache
+/workspaces/DivyaGSarode/csharp/obj/Debug/net8.0/GCDFinder.AssemblyInfo.cs
+/workspaces/DivyaGSarode/csharp/obj/Debug/net8.0/GCDFinder.csproj.CoreCompileInputs.cache
+/workspaces/DivyaGSarode/csharp/obj/Debug/net8.0/GCDFinder.sourcelink.json
+/workspaces/DivyaGSarode/csharp/bin/Debug/net8.0/GCDFinder
+/workspaces/DivyaGSarode/csharp/bin/Debug/net8.0/GCDFinder.deps.json
+/workspaces/DivyaGSarode/csharp/bin/Debug/net8.0/GCDFinder.runtimeconfig.json
+/workspaces/DivyaGSarode/csharp/bin/Debug/net8.0/GCDFinder.dll
+/workspaces/DivyaGSarode/csharp/bin/Debug/net8.0/GCDFinder.pdb
+/workspaces/DivyaGSarode/csharp/obj/Debug/net8.0/GCDFinder.dll
+/workspaces/DivyaGSarode/csharp/obj/Debug/net8.0/refint/GCDFinder.dll
+/workspaces/DivyaGSarode/csharp/obj/Debug/net8.0/GCDFinder.pdb
+/workspaces/DivyaGSarode/csharp/obj/Debug/net8.0/GCDFinder.genruntimeconfig.cache
+/workspaces/DivyaGSarode/csharp/obj/Debug/net8.0/ref/GCDFinder.dll

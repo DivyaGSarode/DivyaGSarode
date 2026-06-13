@@ -1,10 +1,21 @@
 services:
-  app:
-    build: .
+  python-app:
+    build:
+      context: ./python
+      dockerfile: Dockerfile.python
     image: reverse-number-app
     command: ["4561"]
 
-  test:
-    build: .
+  python-test:
+    build:
+      context: ./python
+      dockerfile: Dockerfile.python
     image: reverse-number-app
     entrypoint: ["python3", "-m", "unittest", "discover"]
+
+  csharp-app:
+    build:
+      context: ./csharp
+      dockerfile: Dockerfile.csharp
+    image: gcd-finder-app
+    command: ["48", "18"]

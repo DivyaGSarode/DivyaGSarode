@@ -1,0 +1,46 @@
+using System;
+
+class Program
+{
+    /// <summary>
+    /// Finds the Greatest Common Divisor (GCD) of two numbers
+    /// </summary>
+    static int FindGCD(int a, int b)
+    {
+        a = Math.Abs(a);
+        b = Math.Abs(b);
+        
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        
+        return a;
+    }
+
+    static void Main(string[] args)
+    {
+        if (args.Length < 2)
+        {
+            Console.WriteLine("Usage: dotnet run <number1> <number2>");
+            Console.WriteLine("Example: dotnet run 48 18");
+            Environment.Exit(1);
+        }
+
+        try
+        {
+            int num1 = int.Parse(args[0]);
+            int num2 = int.Parse(args[1]);
+
+            int gcd = FindGCD(num1, num2);
+            Console.WriteLine($"GCD of {num1} and {num2}: {gcd}");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: Please provide valid integers");
+            Environment.Exit(1);
+        }
+    }
+}

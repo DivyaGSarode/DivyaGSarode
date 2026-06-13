@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS builder
+WORKDIR /app
+COPY . .
+RUN dotnet build -c Release
+
+FROM mcr.microsoft.com/dotnet/runtime:10.0
+WORKDIR /app
+COPY --from=builder /app/bin/Release/net10.0 .
+ENTRYPOINT ["dotnet", "GCDFinder.dll"]
