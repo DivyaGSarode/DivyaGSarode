@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    image: reverse-number-app
+    command: ["4561"]
+
+  test:
+    build: .
+    image: reverse-number-app
+    entrypoint: ["python3", "-m", "unittest", "discover"]
