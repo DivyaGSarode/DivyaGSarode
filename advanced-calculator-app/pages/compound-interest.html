@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Compound Interest Calculator</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;max-width:720px;margin:2rem auto;padding:1rem}
+    label{display:block;margin-top:.6rem}
+    input{width:100%;padding:.5rem;margin-top:.25rem}
+    button{margin-top:1rem;padding:.5rem 1rem}
+    #result{margin-top:1rem;font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Finance Calculator</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="scientific.html">Scientific</a></li>
+        <li><a href="finance.html">Finance</a></li>
+        <li><a href="compound-interest.html">Compound Interest</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+      </ul>
+    </nav>
+  </header>
+  <form id="ciForm">
+    <label>Principal (P)
+      <input type="number" id="principal" required step="0.01" value="1000">
+    </label>
+    <label>Annual Rate (%)
+      <input type="number" id="rate" required step="0.01" value="5">
+    </label>
+    <label>Times Compounded per Year (n)
+      <input type="number" id="times" required step="1" min="1" value="12">
+    </label>
+    <label>Years (t)
+      <input type="number" id="years" required step="0.1" min="0" value="10">
+    </label>
+    <button type="submit">Calculate</button>
+  </form>
+
+  <div id="result" aria-live="polite"></div>
+
+  <footer>
+    <p>&copy; 2026 Advanced Calculator App</p>
+  </footer>
+
+  <script>
+    document.getElementById('ciForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const resultEl = document.getElementById('result');
+      resultEl.textContent = '';
+      const P = Number(document.getElementById('principal').value);
+      const rPct = Number(document.getElementById('rate').value);
+      const nRaw = Number(document.getElementById('times').value);
+      const t = Number(document.getElementById('years').value);
+
+      const errors = [];
+      if (!Number.isFinite(P) || P < 0) errors.push('Principal must be a non-negative number.');
+      if (!Number.isFinite(rPct)) errors.push('Annual rate must be a number (use percent, e.g. 5).');
+      if (!Number.isFinite(nRaw) || !Number.isInteger(nRaw) || nRaw <= 0) errors.push('Compounding frequency n must be a positive integer.');
+      if (!Number.isFinite(t) || t < 0) errors.push('Years must be a non-negative number.');
+
+      if (errors.length) {
+        resultEl.innerHTML = '<span style="color:#c00">Error: ' + errors.join(' ') + '</span>';
+        return;
+      }
+
+      const r = rPct / 100;
+      const n = Math.trunc(nRaw);
+      const A = P * Math.pow(1 + r / n, n * t);
+      const interest = A - P;
+      if (!Number.isFinite(A)) {
+        resultEl.innerHTML = '<span style="color:#c00">Error: calculation produced an invalid result. Check your inputs.</span>';
+        return;
+      }
+
+      resultEl.textContent = `Future Value: ${A.toFixed(2)} — Interest Earned: ${interest.toFixed(2)}`;
+    });
+  </script>
+</body>
+</html>
