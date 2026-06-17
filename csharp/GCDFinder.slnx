@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/tests/">
+    <Project Path="tests/GcdFinder.Tests/GcdFinder.Tests.csproj" />
+  </Folder>
+  <Project Path="GCDFinder.csproj" />
+</Solution>
